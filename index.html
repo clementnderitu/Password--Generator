@@ -20,20 +20,23 @@
     <div class="card">
       <h1>Get a <span>random password</span></h1>
       <p class="subtext">never use an insecure password</p>
-      <button class="generate-btn">Generate password</button>
+      <button class="generate-btn" id="generate-pass">Generate password</button>
       <div class="divider"></div>
       <div class="password-container">
-        <div id="pass1" class="password">
-          <button class="clipboard">
+        <div class="password">
+          <span id="pass1"></span>
+          <button class="clipboard" id="copy1">
             <span class="material-symbols-outlined"> content_paste </span>
           </button>
         </div>
-        <div id="pass2" class="password">
-          <button class="clipboard">
+        <div class="password">
+          <span id="pass2"></span>
+          <button class="clipboard" id="copy2">
             <span class="material-symbols-outlined"> content_paste </span>
           </button>
         </div>
       </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
