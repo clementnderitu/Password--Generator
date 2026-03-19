@@ -151,3 +151,19 @@ body, .card, button, .password {
     color 0.3s ease, 
     border 0.3s ease;
 }
+
+#typed-words {
+  border-right: 3px solid var(--primary);
+  padding-right: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--primary); }
+}
+
+#typed-words.blink {
+  animation: blink 0.7s infinite;
+}

@@ -5,7 +5,21 @@ const generateBtn = document.getElementById('generate-pass')
 const copy1 = document.getElementById('copy1')
 const copy2 = document.getElementById('copy2')
 const themeSwitch = document.getElementById('theme-switch')
+const typedWords = document.getElementById('typed-words')
 
+let text = 'random password'
+let index = 0
+function typeWords(){
+    if(index < text.length){
+        typedWords.textContent += text[index]
+        index++
+        setTimeout(typeWords, 100)
+    }else{
+        typedWords.classList.add('blink')
+    }
+}
+
+window.addEventListener('DOMContentLoaded', typeWords)
 
 //get saved theme
 let darkmode = localStorage.getItem('dark')
