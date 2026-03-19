@@ -27,16 +27,21 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
+  background-color: var(--bg);
 }
 
 .card {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-radius: 14px;
-  background-color: var(--bg-card);
-  width: 420px;
-  padding: 35px;
+  background-color: var(--card);
+  width: 500px;
+  padding: 45px;
 }
 
+.card h1{
+  color: var(--text);
+}
 h1 span {
   color: var(--primary);
 }
@@ -101,4 +106,48 @@ button:active {
 
 .clipboard:hover {
   transform: scale(1.1);
+}
+
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--card);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#theme-switch svg:last-child{
+  display: none;
+}
+
+.dark #theme-switch svg:first-child{
+  display: none;
+}
+
+.dark #theme-switch svg:last-child{
+  display: block;
+}
+
+#theme-switch svg{
+  fill: var(--primary);
+}
+
+#theme-switch:hover{
+  transform: rotate(20deg) scale(1.1);
+}
+
+body, .card, button, .password {
+  transition: 
+    background 0.3s ease, 
+    color 0.3s ease, 
+    border 0.3s ease;
 }

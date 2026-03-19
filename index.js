@@ -4,6 +4,37 @@ const pass2 = document.getElementById('pass2')
 const generateBtn = document.getElementById('generate-pass')
 const copy1 = document.getElementById('copy1')
 const copy2 = document.getElementById('copy2')
+const themeSwitch = document.getElementById('theme-switch')
+
+
+//get saved theme
+let darkmode = localStorage.getItem('dark')
+
+if(darkmode === 'active'){
+    enableDarkMode()
+}
+
+//toggle theme
+themeSwitch.addEventListener('click', function(){
+    darkmode = localStorage.getItem('dark')
+
+    if(darkmode !== "active"){
+        enableDarkMode()
+    }else{
+        disableDarkMode()
+    }
+})
+
+
+function enableDarkMode(){
+    document.body.classList.add('dark')
+    localStorage.setItem('dark', 'active')
+}
+
+function disableDarkMode(){
+    document.body.classList.remove('dark')
+    localStorage.removeItem('dark')
+}
 
 function generatePassword() {
      let password = ""
@@ -28,3 +59,4 @@ copy2.addEventListener('click', function(){
     navigator.clipboard.writeText(pass2.textContent)
     alert("copied to clipboard")
 })
+
